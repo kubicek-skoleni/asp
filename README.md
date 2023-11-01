@@ -14,6 +14,10 @@
 * jednoduché stránky, .cshtml, codebehind
 * https://learn.microsoft.com/en-us/aspnet/core/razor-pages/?view=aspnetcore-7.0
 
+## MVC
+* https://learn.microsoft.com/en-us/aspnet/core/mvc/overview?view=aspnetcore-7.0
+* https://learn.microsoft.com/en-us/aspnet/core/tutorials/first-mvc-app/start-mvc?view=aspnetcore-7.0&tabs=visual-studio
+
 # Školení asp.net core 2023
 
 ## Visual Studio 2022 Community Edition - https://visualstudio.microsoft.com/vs/
