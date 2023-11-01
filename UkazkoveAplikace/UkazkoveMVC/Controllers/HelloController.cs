@@ -4,9 +4,36 @@ namespace UkazkoveMVC.Controllers
 {
     public class HelloController : Controller
     {
+        List<string> people = new List<string>()
+        {
+            "Pavel",
+            "Jana",
+            "Martin",
+            "Lucie",
+            "Veronika",
+            "Marcel"
+        };
         public IActionResult Index()
         {
             return View();
+        }
+
+        public string Person(int id)
+        {
+            return $"ahoj {people[id]}";
+        }
+
+        [Route("/hello/exists/{name}/")]
+        public string Exists(string name)
+        {
+            if (people.Contains(name))
+            {
+                return "známe";
+            }
+            else
+            {
+                return "neznáme";
+            }
         }
     }
 }

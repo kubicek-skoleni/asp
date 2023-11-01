@@ -5,9 +5,12 @@ namespace UkazkoveMVC.Controllers
 {
     public class NasobilkaController : Controller
     {
-        public IActionResult Index()
+        public IActionResult Index(int size)
         {
-            var nasobilka = new NasobilkaXY(5);
+            if(size > 10)
+                return BadRequest();
+
+            var nasobilka = new NasobilkaXY(size);
 
             return View(nasobilka);
         }
