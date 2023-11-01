@@ -18,6 +18,10 @@
 * https://learn.microsoft.com/en-us/aspnet/core/mvc/overview?view=aspnetcore-7.0
 * https://learn.microsoft.com/en-us/aspnet/core/tutorials/first-mvc-app/start-mvc?view=aspnetcore-7.0&tabs=visual-studio
 
+### Routing
+* https://learn.microsoft.com/en-us/aspnet/core/mvc/controllers/routing?view=aspnetcore-7.0
+* https://learn.microsoft.com/en-us/aspnet/core/fundamentals/routing?view=aspnetcore-7.0
+
 # Školení asp.net core 2023
 
 ## Visual Studio 2022 Community Edition - https://visualstudio.microsoft.com/vs/
