@@ -2,6 +2,7 @@
 
 namespace UkazkoveMVC.Controllers
 {
+    [Route("[controller]")]
     public class HelloController : Controller
     {
         List<string> people = new List<string>()
@@ -23,7 +24,7 @@ namespace UkazkoveMVC.Controllers
             return $"ahoj {people[id]}";
         }
 
-        [Route("/hello/exists/{name}/")]
+        [Route("[action]/{name}/")]
         public string Exists(string name)
         {
             if (people.Contains(name))

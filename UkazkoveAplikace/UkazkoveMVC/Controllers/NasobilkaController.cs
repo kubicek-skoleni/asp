@@ -3,8 +3,10 @@ using UkazkoveMVC.Models;
 
 namespace UkazkoveMVC.Controllers
 {
+    [Route("[controller]")]
     public class NasobilkaController : Controller
     {
+        [Route("{size}")]
         public IActionResult Index(int size)
         {
             if(size > 10)
