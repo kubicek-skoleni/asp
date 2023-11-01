@@ -4,9 +4,9 @@ namespace UkazkoveMVC.Controllers
 {
     public class HelloController : Controller
     {
-        public string Index()
+        public IActionResult Index()
         {
-            return "hello world";
+            return View();
         }
     }
 }
