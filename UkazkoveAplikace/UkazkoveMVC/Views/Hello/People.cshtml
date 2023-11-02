@@ -1,0 +1,18 @@
+﻿@model List<string>
+
+@{
+    string admin = (string)(ViewData["admin"]);
+    //string admin = ViewBag.Admix;
+}
+
+<h2>Seznam lidí</h2>
+
+@foreach(var person in Model)
+{
+    <p>@person</p>
+}
+
+<h2>Administrátor</h2>
+<p>
+    @admin
+</p>

@@ -14,6 +14,17 @@ namespace UkazkoveMVC.Controllers
             "Veronika",
             "Marcel"
         };
+
+        [Route("/lide")]
+        public IActionResult People()
+        {
+            ViewData["admin"] = "Tomáš";
+
+            //ViewBag.Admin = "Honza";
+
+            return View(people);
+        }
+
         public IActionResult Index()
         {
             return View();
