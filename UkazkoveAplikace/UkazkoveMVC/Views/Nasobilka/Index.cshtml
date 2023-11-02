@@ -1,13 +1,19 @@
-﻿@{
-}
+﻿@model NasobilkaViewModel
 
+@{
+
+}
 
 <h2>Zadej velikost tabulky násobilky</h2>
 
-<form>
+<form asp-controller="Nasobilka" asp-action="" >
     <div class="mb-3">
-        <label class="form-label">Velikost:</label>
-        <input class="form-control">
+        <label asp-for="Size" class="form-label">Velikost:</label>
+        <input asp-for="Size" class="form-control">
     </div>
+    <div class="mb-3">
+        <input type="submit" class="btn btn-primary" value="Ulož"/>
+    </div>
+
 </form>
 
