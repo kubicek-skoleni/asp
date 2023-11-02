@@ -7,8 +7,7 @@ builder.Services.AddControllersWithViews();
 
 builder.Services.AddDbContext<SeznamDbContext>();
 
-
-var app = builder.Build();
+var app = builder.Build();  
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
