@@ -28,7 +28,16 @@ namespace TelefonniSeznam.Controllers
         {
             return View();
         }
-       
+
+        [HttpPost]
+        public IActionResult Pridej(Clovek clovek)
+        {
+            _context.Lide.Add(clovek);
+            _context.SaveChanges();
+
+            return RedirectToAction("Index");
+        }
+
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
