@@ -1,5 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using UkazkoveMVC.Models;
+using UkazkoveMVC.ViewModels;
+
 
 namespace UkazkoveMVC.Controllers
 {
@@ -23,5 +25,16 @@ namespace UkazkoveMVC.Controllers
         {
             return View();
         }
+
+        [Route("[action]")]
+        [HttpPost]
+        public IActionResult Index(NasobilkaViewModel data)
+        {
+            var model = new NasobilkaXY(data.Size);
+
+            return View("Tabulka", model);
+        }
+
+
     }
 }
