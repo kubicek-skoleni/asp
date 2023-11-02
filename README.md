@@ -1,8 +1,5 @@
- protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
- {
-     string conn = "Server=(localdb)\\mssqllocaldb;Database=TelSeznamDb;Trusted_Connection=True;MultipleActiveResultSets=true";
-     optionsBuilder.UseSqlServer();
- }
+`string conn = "Server=(localdb)\\mssqllocaldb;Database=TelSeznamDb;Trusted_Connection=True;MultipleActiveResultSets=true";`
+   
 
 
 # asp.net core
