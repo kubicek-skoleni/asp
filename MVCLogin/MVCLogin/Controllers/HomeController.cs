@@ -1,9 +1,11 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using MVCLogin.Models;
 using System.Diagnostics;
 
 namespace MVCLogin.Controllers
 {
+    [Authorize]
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
@@ -15,9 +17,19 @@ namespace MVCLogin.Controllers
 
         public IActionResult Index()
         {
+            string login = User.Identity.Name;
+
+            if(User.Identity.IsAuthenticated)
+            {
+                //je prihlaseny
+            }
+
+            ViewData["user"] = login;
+
             return View();
         }
 
+        [AllowAnonymous]
         public IActionResult Privacy()
         {
             return View();
