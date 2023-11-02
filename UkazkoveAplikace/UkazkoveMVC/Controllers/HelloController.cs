@@ -24,7 +24,8 @@ namespace UkazkoveMVC.Controllers
             return $"ahoj {people[id]}";
         }
 
-        [Route("[action]/{name}/")]
+        [Route("[action]/{name}")]
+        [HttpGet]
         public string Exists(string name)
         {
             if (people.Contains(name))
