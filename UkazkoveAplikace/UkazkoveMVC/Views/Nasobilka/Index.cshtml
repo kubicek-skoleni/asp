@@ -1,20 +1,4 @@
-﻿@model NasobilkaXY
-
-@{
-    var nasob = Model;
+﻿@{
 }
 
-<h1>Tabulka násobilky</h1>
-
-<table class="table table-bordered">
-    @foreach (var row in nasob.Rows)
-    {
-        <tr>
-            @foreach(var prvek in row)
-            {
-                <td>@prvek</td>
-            }
-        </tr>
-    }
-</table>
 

@@ -24,7 +24,7 @@ namespace UkazkoveMVC.Controllers
             return $"ahoj {people[id]}";
         }
 
-        [Route("[action]/{name}")]
+        [Route("[action]/{name}", Name ="mojecesta")]
         [HttpGet]
         public string Exists(string name)
         {
