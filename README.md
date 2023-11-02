@@ -1,3 +1,10 @@
+ protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+ {
+     string conn = "Server=(localdb)\\mssqllocaldb;Database=TelSeznamDb;Trusted_Connection=True;MultipleActiveResultSets=true";
+     optionsBuilder.UseSqlServer();
+ }
+
+
 # asp.net core
 * obecný webový framework
   * MVC, API, Blazor...
