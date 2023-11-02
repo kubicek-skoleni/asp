@@ -32,6 +32,9 @@ namespace TelefonniSeznam.Controllers
         [HttpPost]
         public IActionResult Pridej(Clovek clovek)
         {
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+
             _context.Lide.Add(clovek);
             _context.SaveChanges();
 

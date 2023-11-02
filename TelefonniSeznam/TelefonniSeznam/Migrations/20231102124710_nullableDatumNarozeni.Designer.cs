@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using TelefonniSeznam.Data;
 
@@ -11,9 +12,11 @@ using TelefonniSeznam.Data;
 namespace TelefonniSeznam.Migrations
 {
     [DbContext(typeof(SeznamDbContext))]
-    partial class SeznamDbContextModelSnapshot : ModelSnapshot
+    [Migration("20231102124710_nullableDatumNarozeni")]
+    partial class nullableDatumNarozeni
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
