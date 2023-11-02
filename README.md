@@ -1,3 +1,7 @@
+`string conn = "Server=(localdb)\\mssqllocaldb;Database=TelSeznamDb;Trusted_Connection=True;MultipleActiveResultSets=true";`
+   
+
+
 # asp.net core
 * obecný webový framework
   * MVC, API, Blazor...
