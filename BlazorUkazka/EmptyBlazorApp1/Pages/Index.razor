@@ -1,8 +1,13 @@
 ﻿@page "/"
 
 @inject SeznamDbContext db
+@inject NavigationManager nav
 
 <h1>Seznam osob ☎</h1>
+
+<div>
+    <button @onclick="GoToPridej">➕ Přidej novou</button>
+</div>
 
 <table>
     <tr>
@@ -44,6 +49,11 @@
     protected override void OnInitialized()
     {
         lide = db.Lide.ToList();
+    }
+
+    void GoToPridej()
+    {
+        nav.NavigateTo("/pridej");
     }
 }
 

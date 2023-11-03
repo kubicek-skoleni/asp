@@ -7,15 +7,18 @@ namespace EmptyBlazorApp1.Models
         public int Id { get; set; }
 
         [MaxLength(10)]
+        [Required]
         public string Jmeno { get; set; }
 
         [MaxLength(10)]
+        [Required]
         public string Prijmeni { get; set; }
 
         [DataType(DataType.Date)]
         public DateTime? DatumNarozeni { get; set; }
 
         [MaxLength(12)]
+        [Required]
         public string Telefon { get; set; }
     }
 }

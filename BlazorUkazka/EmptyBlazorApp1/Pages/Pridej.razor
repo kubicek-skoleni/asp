@@ -4,7 +4,8 @@
 
 <h3>Přidej novou osobu</h3>
 
-<EditForm Model="clovek" OnSubmit="Uloz">
+<EditForm Model="clovek" OnValidSubmit="Uloz"  >
+    <DataAnnotationsValidator />
     <div>
         <label>Jméno</label>
         <InputText @bind-Value="clovek.Jmeno" />
@@ -20,8 +21,11 @@
     <div>
         <label>Telefon</label>
         <InputText @bind-Value="clovek.Telefon" />
+        
     </div>
     <button type="submit">Ulož</button>
+
+    <ValidationSummary />
 </EditForm>
 
 @code {
