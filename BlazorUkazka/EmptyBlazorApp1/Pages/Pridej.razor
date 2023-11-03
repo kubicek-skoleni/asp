@@ -1,0 +1,37 @@
+﻿@page "/pridej"
+@inject SeznamDbContext db
+@inject NavigationManager nav
+
+<h3>Přidej novou osobu</h3>
+
+<EditForm Model="clovek" OnSubmit="Uloz">
+    <div>
+        <label>Jméno</label>
+        <InputText @bind-Value="clovek.Jmeno" />
+    </div>
+    <div>
+        <label>Příjmení</label>
+        <InputText @bind-Value="clovek.Prijmeni" />
+    </div>
+    <div>
+        <label>Datum narození</label>
+        <InputDate @bind-Value="clovek.DatumNarozeni" />
+    </div>
+    <div>
+        <label>Telefon</label>
+        <InputText @bind-Value="clovek.Telefon" />
+    </div>
+    <button type="submit">Ulož</button>
+</EditForm>
+
+@code {
+    Clovek clovek = new Clovek();
+
+    void Uloz()
+    {
+        db.Lide.Add(clovek);
+        db.SaveChanges();
+
+        nav.NavigateTo("/");
+    }
+}
