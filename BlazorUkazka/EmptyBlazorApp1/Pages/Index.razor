@@ -1,3 +1,50 @@
 ﻿@page "/"
 
-<h1>Hello, world!</h1>
+@inject SeznamDbContext db
+
+<h1>Seznam osob ☎</h1>
+
+<table>
+    <tr>
+        <th>
+            Jméno
+        </th>
+        <th>
+            Příjmení
+        </th>
+        <th>
+            Datum.Nar.
+        </th>
+        <th>
+            Telefon
+        </th>
+    </tr>
+    @foreach(var clovek in lide)
+    {
+        <tr>
+            <td>
+                @clovek.Jmeno
+            </td>
+            <td>
+                @clovek.Prijmeni
+            </td>
+            <td>
+                @clovek.DatumNarozeni
+            </td>
+            <td>
+                @clovek.Telefon
+            </td>
+        </tr>
+    }
+</table>
+
+@code {
+    List<Clovek> lide = new List<Clovek>();
+
+    protected override void OnInitialized()
+    {
+        lide = db.Lide.ToList();
+    }
+}
+
+

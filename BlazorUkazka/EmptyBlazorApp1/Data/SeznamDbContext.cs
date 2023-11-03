@@ -9,7 +9,7 @@ namespace EmptyBlazorApp1.Data
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            string conn = "Server=(localdb)\\mssqllocaldb;Database=TelSeznamDb;Trusted_Connection=True;MultipleActiveResultSets=true";
+            string conn = "Server=(localdb)\\mssqllocaldb;Database=TelSeznamBlazor;Trusted_Connection=True;MultipleActiveResultSets=true";
             optionsBuilder.UseSqlServer(conn);
         }
     }
