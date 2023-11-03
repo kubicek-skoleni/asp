@@ -1,0 +1,36 @@
+* Co jsou Tag Helpers? příklad
+	<a asp-for
+	formuláře, odkazy, hash v?=xxxx
+
+* MVC - kde probíhá validace hodnot zadaných formulářových dat?
+	klient - prihlížeč html5 / javascript
+	server - ModelState.IsValid
+	databáze
+
+* MVC - životní cyklus Controlleru
+	http request / response
+
+* Co je Dependency Injection a jak ji používáme?
+	potřebuju db / logger / ..
+	dostanu ho
+
+* Kde budete hledat knihovny pro .net?
+	nuget.org
+
+* Co je Entity Framework?
+	ORM - object relational mapper
+	db <=> c# třídy
+	DbContext
+	čtení z db: _context.Lide.Where(x => ..)
+	zápis do db: _context.Lide.Add(clovek)
+		     _context.SaveChanges()
+	migrace - add-migration, update-database
+	
+
+* Jak omezíte část webu na přihlášené uživatele?
+	[Authorize]
+	[AllowAnonymous]
+
+* Čemu se říká Scaffolding?
+	lešení
+	generování kódu - Controller, Identity, Views,
