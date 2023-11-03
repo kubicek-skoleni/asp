@@ -1,0 +1,44 @@
+﻿@page "/osoba/{id:int}"
+@using Microsoft.EntityFrameworkCore;
+@inject SeznamDbContext db
+
+<h3>Osoba</h3>
+
+@if(notfound)
+{
+    <div>Nenašel jsem osobu podle id: @id</div>
+}
+else
+{
+    <h4>@clovek.Jmeno @clovek.Prijmeni</h4>
+
+    <ul>
+        <li>Datum narození: @clovek.DatumNarozeni?.ToShortDateString()</li>
+        <li>Telefon☎: @clovek.Telefon</li>
+        <li>Adresa: @clovek.Bydliste</li>
+        @foreach(var dok in clovek.Dokumenty)
+        {
+            <li>@dok.Typ: @dok.Cislo</li>
+        }
+    </ul>
+}
+
+@code {
+
+    [Parameter]
+    public int id { get; set; }
+
+    bool notfound = false;
+
+    Clovek? clovek = new Clovek();
+
+    protected override void OnInitialized()
+    {
+        clovek = db.Lide
+            .Include(clovek => clovek.Bydliste)
+            .Include(cl => cl.Dokumenty)
+            .FirstOrDefault(clovek => clovek.Id == id);
+
+        notfound = clovek == null;
+    }
+}

@@ -4,6 +4,7 @@ using EmptyBlazorApp1.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace EmptyBlazorApp1.Migrations
 {
     [DbContext(typeof(SeznamDbContext))]
-    partial class SeznamDbContextModelSnapshot : ModelSnapshot
+    [Migration("20231103122414_adresa")]
+    partial class adresa
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -81,32 +84,6 @@ namespace EmptyBlazorApp1.Migrations
                     b.ToTable("Lide");
                 });
 
-            modelBuilder.Entity("EmptyBlazorApp1.Models.Dokument", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<string>("Cislo")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int?>("ClovekId")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Typ")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("ClovekId");
-
-                    b.ToTable("Dokument");
-                });
-
             modelBuilder.Entity("EmptyBlazorApp1.Models.Clovek", b =>
                 {
                     b.HasOne("EmptyBlazorApp1.Models.Adresa", "Bydliste")
@@ -114,18 +91,6 @@ namespace EmptyBlazorApp1.Migrations
                         .HasForeignKey("BydlisteId");
 
                     b.Navigation("Bydliste");
-                });
-
-            modelBuilder.Entity("EmptyBlazorApp1.Models.Dokument", b =>
-                {
-                    b.HasOne("EmptyBlazorApp1.Models.Clovek", null)
-                        .WithMany("Dokumenty")
-                        .HasForeignKey("ClovekId");
-                });
-
-            modelBuilder.Entity("EmptyBlazorApp1.Models.Clovek", b =>
-                {
-                    b.Navigation("Dokumenty");
                 });
 #pragma warning restore 612, 618
         }

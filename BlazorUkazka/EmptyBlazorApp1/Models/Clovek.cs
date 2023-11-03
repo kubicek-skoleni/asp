@@ -20,5 +20,9 @@ namespace EmptyBlazorApp1.Models
         [MaxLength(12)]
         [Required]
         public string Telefon { get; set; }
+
+        public Adresa? Bydliste { get; set; }
+
+        public List<Dokument>? Dokumenty { get; set;} = new List<Dokument>();
     }
 }

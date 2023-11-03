@@ -23,6 +23,9 @@
         <th>
             Telefon
         </th>
+        <th>
+            Akce
+        </th>
     </tr>
     @foreach(var clovek in lide)
     {
@@ -38,6 +41,10 @@
             </td>
             <td>
                 @clovek.Telefon
+            </td>
+            <td>
+                <a href="/osoba/@clovek.Id">Detail</a> |
+                <a href="/edit/@clovek.Id">Editace</a>
             </td>
         </tr>
     }
